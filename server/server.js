@@ -15,11 +15,11 @@ app.post('/todos', (req, res) => {
   });
 
   newTodo.save().then((doc) => {
-    console.log(JSON.stringify(doc, undefined, 2));
+    // console.log(JSON.stringify(doc, undefined, 2));
     res.send(doc);
   }, (err) => {
     res.status(400).send(err);
-    console.log('Unable to save Todo', err);
+    // console.log('Unable to save Todo', err);
   });
 
 })
@@ -29,13 +29,13 @@ app.get('/todos', (req, res) => {
     res.send({todos});
   }, (err) => {
     res.status(400).send(err);
-    console.log('Unable to save Todo', err);
-  })
+    // console.log('Unable to save Todo', err);
+  });
 });
 
 app.listen(3000, () => {
   console.log('Started on port 3000');
-})
+});
 
 module.exports = {app};
 
