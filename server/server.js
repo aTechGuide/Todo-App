@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const {ObjectID} = require('mongodb');
 
 var {mongoose} = require('./db/mongoose');
 var {Todo} = require('./models/todo');
@@ -33,18 +34,26 @@ app.get('/todos', (req, res) => {
   });
 });
 
+app.get('/todos/:id', (req, res) => {
+  var id = req.params.id;
+
+  if (!ObjectID.isValid(id)) {
+    return res.status(404).send();
+  }
+
+  Todo.findById(id).then((todo) => {
+    if(!todo) {
+      return res.status(404).send();
+    }
+    return res.send({todo});
+    
+  }).catch((e) => {
+    res.status(400).send();
+  })
+});
+
 app.listen(3000, () => {
   console.log('Started on port 3000');
 });
 
 module.exports = {app};
-
-// var newUser = new User({
-//   email: 'abc@example.com'
-// });
-
-// newUser.save().then((doc) => {
-//   console.log(JSON.stringify(doc, undefined, 2));
-// }, (e) => {
-//   console.log('Unable to save newUser');
-// });
