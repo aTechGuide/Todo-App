@@ -9,18 +9,32 @@ if (! ObjectID.isValid(id)) {
   console.log('ID not valid')
 }
 
-Todo.find({
-  _id: id
-}).then((todos) => {
-  console.log('TODOS ', todos);
-})
+// Todo.find({
+//   _id: id
+// }).then((todos) => {
+//   console.log('TODOS ', todos);
+// })
 
-Todo.findOne({
-  _id: id
-}).then((todo) => {
-  console.log('TODO ', todo);
-})
+// Todo.findOne({
+//   _id: id
+// }).then((todo) => {
+//   console.log('TODO ', todo);
+// })
 
-Todo.findById(id).then((todo) => {
-  console.log('TODO by ID ', todo);
-})
+// Todo.findById(id).then((todo) => {
+//   console.log('TODO by ID ', todo);
+// })
+
+// Todo Remove
+// Todo.remove({}).then((result) => {
+//   console.log(result)
+// })
+
+// Todo.findOneAndRemove({_id: new ObjectId(id)}).then((result) => {
+//   console.log(result)
+// })
+
+// Todo.findByIdAndRemove({'dsfds'}).then((result) => {
+//   console.log(result)
+// })
+
