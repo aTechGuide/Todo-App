@@ -42,8 +42,9 @@ UserSchema.methods.toJSON = function () {
   return _.pick(userObject, ['_id', 'email']);
 }
 
+// Adding instance method
 UserSchema.methods.generateAuthToken = function () {
-  var user = this;
+  var user = this; // Instance method is called with individual document
   var access = 'auth';
   var token = jwt.sign({_id: user._id.toHexString(), access: access}, 'abc123').toString();
 
@@ -55,6 +56,23 @@ UserSchema.methods.generateAuthToken = function () {
   return user.save().then(() => {
     return token;
   });
+}
+
+// Adding model method
+UserSchema.statics.findByToken = function (token) {
+  var User = this; // Model method is called with model as this binding
+  var decoded;
+  try {
+    decoded = jwt.verify(token, 'abc123')
+  } catch (error) {
+    return Promise.reject();
+  }
+
+  return User.findOne({
+    '_id': decoded._id,
+    'tokens.token': token,
+    'tokens.access': 'auth'
+  })
 }
 
 var User = mongoose.model('User', UserSchema);
