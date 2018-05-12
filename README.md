@@ -4,10 +4,8 @@ This APP is build while completing [this](https://www.udemy.com/the-complete-nod
 
 # API Guide
 ## Todo APIs
-GET http://localhost:3000/todos  
 
-GET http://localhost:3000/todos/{id}  
-
+### Create a Todo
 POST http://localhost:3000/todos  
 ```
 {
@@ -15,16 +13,26 @@ POST http://localhost:3000/todos
 }
 ```
 
+### Get All TODOs
+GET http://localhost:3000/todos  
+
+### Get TODO by ID
+GET http://localhost:3000/todos/{id}  
+
+## Edit a Todo
 PATCH http://localhost:3000/todos/{id}  
 ```
 {
 	"text": "My First TODO Item"
 }
 ```
+
+## Delete a Todo
 DELETE http://localhost:3000/todos/{id}  
 
 ## User APIs
 
+### Create a User
 POST http://localhost:3000/users  
 ```
 {
@@ -32,10 +40,11 @@ POST http://localhost:3000/users
 	"password": "123456!"
 }
 ```
-
+### Get UserName and ID of user
 GET http://localhost:3000/users/me  
 HEADER 'x-auth: token'
 
+### Login a user
 POST http://localhost:3000/users/login 
 ```
 {
@@ -43,6 +52,10 @@ POST http://localhost:3000/users/login
 	"password": "123456!"
 }
 ```
+
+### Logout a user
+DELETE http://localhost:3000/users/me/token  
+HEADER 'x-auth: token'
 
 # Commands
 To start App ``` node server/server.js ```
