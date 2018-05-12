@@ -7,6 +7,7 @@ This APP is build while completing [this](https://www.udemy.com/the-complete-nod
 
 ### Create a Todo
 POST http://localhost:3000/todos  
+HEADER 'x-auth: token'
 ```
 {
 	"text": "My First TODO Item"
@@ -15,12 +16,15 @@ POST http://localhost:3000/todos
 
 ### Get All TODOs
 GET http://localhost:3000/todos  
+HEADER 'x-auth: token'
 
 ### Get TODO by ID
 GET http://localhost:3000/todos/{id}  
+HEADER 'x-auth: token'
 
 ## Edit a Todo
 PATCH http://localhost:3000/todos/{id}  
+HEADER 'x-auth: token'
 ```
 {
 	"text": "My First TODO Item"
@@ -29,6 +33,7 @@ PATCH http://localhost:3000/todos/{id}
 
 ## Delete a Todo
 DELETE http://localhost:3000/todos/{id}  
+HEADER 'x-auth: token'
 
 ## User APIs
 
