@@ -1,6 +1,6 @@
-# Todo API
+# To-do App
 
-This APP is build while completing [this](https://www.udemy.com/the-complete-nodejs-developer-course-2) course on NodeJS
+This app is build on node JS and provides CRUD operations for Todo's. To-do is created for a user and is persisted in Mongo DB. New Users can be Signed up and **encrypted** credentials are persisted in Mongo DB. JWT Token is returned after authenticating user which can be further used for authenticating CRUD operations of Todo's.
 
 # API Guide
 ## Todo APIs
@@ -68,4 +68,5 @@ To start App ``` node server/server.js ```
 To run Specific Test ``` npm test -- -g 'POST /users' ```
 
 # References
-[Mongoose Validation](http://mongoosejs.com/docs/validation.html)
+- [Mongoose Validation](http://mongoosejs.com/docs/validation.html)
+- Course [link](https://www.udemy.com/the-complete-nodejs-developer-course-2)
