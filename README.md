@@ -1,6 +1,6 @@
 # To-do App
 
-This app is build on node JS and provides CRUD operations for Todo's. To-do is created for a user and is persisted in Mongo DB. New Users can be Signed up and **encrypted** credentials are persisted in Mongo DB. JWT Token is returned after authenticating user which can be further used for authenticating CRUD operations of Todo's.
+*Node JS* app providing CRUD operations for Todos' management. To-do created by a user is persisted in Mongo DB. New Users can be Signed up and **encrypted** credentials are persisted in Mongo DB. JWT Token returned after user login is used to authenticate CRUD operations of Todo's.
 
 # API Guide
 ## Todo APIs
