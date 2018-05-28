@@ -63,10 +63,10 @@ DELETE http://localhost:3000/users/me/token
 HEADER 'x-auth: token'
 
 # Commands
-To start App ``` node server/server.js ```
-To run Test ``` npm test ```
-To run Specific Test ``` npm test -- -g 'POST /users' ```
-To start MongoDB ``` ~/db/mongodb/bin/mongod --dbpath ~/db/mongo-data/ ```
+To start App ``` node server/server.js ```  
+To run Test ``` npm test ```  
+To run Specific Test ``` npm test -- -g 'POST /users' ```  
+To start MongoDB ``` ~/db/mongodb/bin/mongod --dbpath ~/db/mongo-data/ ```  
 
 # References
 - [Mongoose Validation](http://mongoosejs.com/docs/validation.html)
